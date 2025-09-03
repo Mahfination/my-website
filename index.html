@@ -3,156 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ই-পাসপোর্ট আবেদন সহায়িকা | বাংলাদেশ</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>ই-পাসপোর্ট আবেদন সহায়িকা | বাংলাদেশ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
+    <a href="https://wa.me/8801965705111" class="whatsapp-button" target="_blank" title="Get Passport Help">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header>
         <nav>
-            <div class="logo">ই-পাসপোর্ট সহায়িকা</div>
-            <ul>
+            <div class="logo">ই-পাসপোর্ট সহায়িকা</div>
+            <ul class="nav-links">
                 <li><a href="#interactive-guide">গাইড তৈরি করুন</a></li>
                 <li><a href="#steps">আবেদনের ধাপ</a></li>
                 <li><a href="#documents">কাগজপত্র</a></li>
                 <li><a href="#fees">ফি</a></li>
             </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>আপনার ই-পাসপোর্ট আবেদনের সহজ সমাধান</h1>
-            <p>নিচের ফরমটি পূরণ করে আপনার বয়স ও প্রয়োজন অনুযায়ী একটি স্টেপ-বাই-স্টেপ গাইড পান।</p>
+            <div class="animate-on-scroll">
+                <h1>আপনার ই-পাসপোর্ট আবেদনের সহজ সমাধান</h1>
+                <p>নিচের ফরমটি পূরণ করে আপনার বয়স ও প্রয়োজন অনুযায়ী একটি স্টেপ-বাই-স্টেপ গাইড পান।</p>
+            </div>
         </section>
 
         <section id="interactive-guide" class="content-section">
-            <h2>আপনার ব্যক্তিগত গাইড তৈরি করুন</h2>
-            <p>আপনার সঠিক তথ্য দিন, আমরা আপনাকে জানাবো ঠিক কী কী করতে হবে।</p>
-            <form id="guide-form">
-                <div class="form-group">
-                    <label for="age">আপনার বয়স কত?</label>
-                    <input type="number" id="age" placeholder="যেমন: 25" required>
-                </div>
-                <div class="form-group">
-                    <label for="appType">আবেদনের কারণ কী?</label>
-                    <select id="appType" required>
-                        <option value="" disabled selected>নির্বাচন করুন...</option>
-                        <option value="new">নতুন পাসপোর্ট</option>
-                        <option value="reissue">পাসপোর্ট নবায়ন (রি-ইস্যু)</option>
-                        <option value="lost">হারিয়ে যাওয়া পাসপোর্ট</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="isGovt">আপনি কি সরকারি চাকরিজীবী?</label>
-                    <select id="isGovt" required>
-                        <option value="no">না</option>
-                        <option value="yes">হ্যাঁ (NOC/GO আছে)</option>
-                    </select>
-                </div>
-                <button type="submit">আমার জন্য গাইড বানান</button>
-            </form>
-            <div id="results" class="hidden">
-                </div>
+            <div class="animate-on-scroll">
+                <h2>আপনার ব্যক্তিগত গাইড তৈরি করুন</h2>
+                <p class="section-intro">আপনার সঠিক তথ্য দিন, আমরা আপনাকে জানাবো ঠিক কী কী করতে হবে।</p>
+                <form id="guide-form">
+                    <div class="form-group"><label for="age">আপনার বয়স কত?</label><input type="number" id="age" placeholder="যেমন: 25" required></div>
+                    <div class="form-group"><label for="appType">আবেদনের কারণ কী?</label><select id="appType" required><option value="" disabled selected>নির্বাচন করুন...</option><option value="new">নতুন পাসপোর্ট</option><option value="reissue">পাসপোর্ট নবায়ন</option><option value="lost">হারিয়ে যাওয়া পাসপোর্ট</option></select></div>
+                    <div class="form-group"><label for="isGovt">আপনি কি সরকারি চাকরিজীবী?</label><select id="isGovt" required><option value="no">না</option><option value="yes">হ্যাঁ (NOC/GO আছে)</option></select></div>
+                    <button type="submit">আমার জন্য গাইড বানান</button>
+                </form>
+                <div id="results" class="hidden"></div>
+            </div>
         </section>
+
         <section id="steps" class="content-section">
-            <h2>সাধারণভাবে ই-পাসপোর্টের ৫টি ধাপ</h2>
-            <div class="step-container">
-                 <div class="step">
-                    <h3>ধাপ ১: অনলাইন আবেদন</h3>
-                    <p>সরকারি ওয়েবসাইটে গিয়ে প্রয়োজনীয় তথ্য দিয়ে অনলাইনে আবেদন ফর্ম পূরণ করুন।</p>
-                </div>
-                <div class="step">
-                    <h3>ধাপ ২: ফি প্রদান</h3>
-                    <p>অনলাইন বা ব্যাংকের মাধ্যমে নির্ধারিত পাসপোর্ট ফি জমা দিন।</p>
-                </div>
-                <div class="step">
-                    <h3>ধাপ ৩: বায়োমেট্রিক এনরোলমেন্ট</h3>
-                    <p>আবেদনপত্র ও কাগজপত্র নিয়ে পাসপোর্ট অফিসে গিয়ে ছবি, আঙুলের ছাপ ও স্বাক্ষর দিন।</p>
-                </div>
-                <div class="step">
-                    <h3>ধাপ ৪: পুলিশ ভেরিফিকেশন</h3>
-                    <p>আপনার দেওয়া ঠিকানায় পুলিশ ভেরিফিকেশন সম্পন্ন হবে (নতুন পাসপোর্টের ক্ষেত্রে)।</p>
-                </div>
-                <div class="step">
-                    <h3>ধাপ ৫: পাসপোর্ট সংগ্রহ</h3>
-                    <p>মোবাইলে বার্তা পেলে পাসপোর্ট অফিস থেকে ডেলিভারি স্লিপ দেখিয়ে পাসপোর্ট সংগ্রহ করুন।</p>
+            <div class="animate-on-scroll">
+                <h2>ই-পাসপোর্টের ৫টি সহজ ধাপ</h2>
+                <div class="step-container">
+                    <div class="step"><h3>ধাপ ১: অনলাইন আবেদন</h3><p>সরকারি ওয়েবসাইটে গিয়ে অনলাইনে আবেদন ফর্ম পূরণ করুন।</p></div>
+                    <div class="step"><h3>ধাপ ২: ফি প্রদান</h3><p>অনলাইন বা ব্যাংকের মাধ্যমে নির্ধারিত পাসপোর্ট ফি জমা দিন।</p></div>
+                    <div class="step"><h3>ধাপ ৩: বায়োমেট্রিক</h3><p>অফিসে গিয়ে ছবি, আঙুলের ছাপ ও স্বাক্ষর দিন।</p></div>
+                    <div class="step"><h3>ধাপ ৪: পুলিশ ভেরিফিকেশন</h3><p>আপনার ঠিকানায় পুলিশ ভেরিফিকেশন সম্পন্ন হবে।</p></div>
+                    <div class="step"><h3>ধাপ ৫: পাসপোর্ট সংগ্রহ</h3><p>মোবাইলে বার্তা পেলে পাসপোর্ট অফিস থেকে সংগ্রহ করুন।</p></div>
                 </div>
             </div>
         </section>
 
         <section id="documents" class="content-section">
-            <h2>প্রয়োজনীয় কাগজপত্রের সাধারণ তালিকা</h2>
-            <p>আপনার বয়স ও আবেদনের কারণ অনুযায়ী কাগজপত্রের ভিন্নতা হতে পারে। ব্যক্তিগত গাইডের জন্য উপরের ফর্মটি পূরণ করুন।</p>
-            
-            <div class="doc-card">
-                <h3>২০ বছরের বেশি (নতুন/নবায়ন)</h3>
-                <ul>
-                    <li>✅ জাতীয় পরিচয়পত্র (NID) - আবশ্যক</li>
-                    <li>✅ পূর্ববর্তী পাসপোর্টের কপি (নবায়নের ক্ষেত্রে)</li>
-                    <li>✅ সরকারি আদেশ (GO)/অনাপত্তি (NOC) - সরকারি চাকরিজীবীদের জন্য</li>
-                </ul>
-            </div>
-
-            <div class="doc-card">
-                <h3>১৮ বছরের কম (নতুন/নবায়ন)</h3>
-                <ul>
-                    <li>✅ অনলাইন জন্মনিবন্ধন সনদ (BRC English Version)</li>
-                    <li>✅ পিতা ও মাতার জাতীয় পরিচয়পত্রের (NID) কপি</li>
-                    <li>✅ 3R সাইজের ছবি (৬ বছরের কম বয়সীদের জন্য)</li>
-                </ul>
+            <div class="animate-on-scroll">
+                <h2>প্রয়োজনীয় কাগজপত্রের সাধারণ তালিকা</h2>
+                <p class="section-intro">আপনার বয়স ও আবেদনের কারণ অনুযায়ী কাগজপত্রের ভিন্নতা হতে পারে। ব্যক্তিগত গাইডের জন্য উপরের ফর্মটি পূরণ করুন।</p>
+                <div class="doc-card-container">
+                    <div class="doc-card"><h3>২০ বছরের বেশি (নতুন/নবায়ন)</h3><ul><li>✅ জাতীয় পরিচয়পত্র (NID) - আবশ্যক</li><li>✅ পূর্ববর্তী পাসপোর্টের কপি (নবায়নের ক্ষেত্রে)</li><li>✅ সরকারি আদেশ (GO)/অনাপত্তি (NOC) - সরকারি চাকরিজীবীদের জন্য</li></ul></div>
+                    <div class="doc-card"><h3>১৮ বছরের কম (নতুন/নবায়ন)</h3><ul><li>✅ অনলাইন জন্মনিবন্ধন সনদ (BRC English Version)</li><li>✅ পিতা ও মাতার জাতীয় পরিচয়পত্রের (NID) কপি</li><li>✅ 3R সাইজের ছবি (৬ বছরের কম বয়সীদের জন্য)</li></ul></div>
+                </div>
             </div>
         </section>
 
         <section id="fees" class="content-section">
-            <h2>পাসপোর্ট ফি এবং সময়</h2>
-            <p>বাংলাদেশের অভ্যন্তরে আবেদনের জন্য (১৫% ভ্যাট সহ)।</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>পাসপোর্টের ধরন</th>
-                        <th>সাধারণ ডেলিভারি (১৫ দিন)</th>
-                        <th>জরুরি ডেলিভারি (৭ দিন)</th>
-                        <th>অতি জরুরি ডেলিভারি (২ দিন)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>৪৮ পৃষ্ঠা, ৫ বছর মেয়াদ</td>
-                        <td>৳ ৪,০২৫</td>
-                        <td>৳ ৬,৩২৫</td>
-                        <td>৳ ৮,৬২৫</td>
-                    </tr>
-                    <tr>
-                        <td>৪৮ পৃষ্ঠা, ১০ বছর মেয়াদ</td>
-                        <td>৳ ৫,৭৫০</td>
-                        <td>৳ ৮,০৫০</td>
-                        <td>৳ ১০,৩৫০</td>
-                    </tr>
-                    <tr>
-                        <td>৬৪ পৃষ্ঠা, ৫ বছর মেয়াদ</td>
-                        <td>৳ ৬,৩২৫</td>
-                        <td>৳ ৮,৬২৫</td>
-                        <td>৳ ১২,০৭৫</td>
-                    </tr>
-                    <tr>
-                        <td>৬৪ পৃষ্ঠা, ১০ বছর মেয়াদ</td>
-                        <td>৳ ৮,০৫০</td>
-                        <td>৳ ১০,৩৫০</td>
-                        <td>৳ ১৩,৮০০</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="animate-on-scroll">
+                <h2>পাসপোর্ট ফি এবং সময়</h2>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th>পাসপোর্টের ধরন</th><th>সাধারণ ডেলিভারি</th><th>জরুরি ডেলিভারি</th><th>অতি জরুরি ডেলিভারি</th></tr></thead>
+                        <tbody>
+                            <tr><td>৪৮ পৃষ্ঠা, ৫ বছর মেয়াদ</td><td>৳ ৪,০২৫</td><td>৳ ৬,৩২৫</td><td>৳ ৮,৬২৫</td></tr>
+                            <tr><td>৪৮ পৃষ্ঠা, ১০ বছর মেয়াদ</td><td>৳ ৫,৭৫০</td><td>৳ ৮,০৫০</td><td>৳ ১০,৩৫০</td></tr>
+                            <tr><td>৬৪ পৃষ্ঠা, ৫ বছর মেয়াদ</td><td>৳ ৬,৩২৫</td><td>৳ ৮,৬২৫</td><td>৳ ১২,০৭৫</td></tr>
+                            <tr><td>৬৪ পৃষ্ঠা, ১০ বছর মেয়াদ</td><td>৳ ৮,০৫০</td><td>৳ ১০,৩৫০</td><td>৳ ১৩,৮০০</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-    <p>&copy; 2025 ই-পাসপোর্ট আবেদন সহায়িকা। এটি একটি তথ্যমূলক গাইড, সরকারি ওয়েবসাইট নয়।</p>
-    <p>Designed by <a href="https://www.facebook.com/mahfujurobin" target="_blank" rel="noopener noreferrer">Mahfujur Rahman Robin</a></p>
-</footer>
+        <p>&copy; 2025 ই-পাসপোর্ট আবেদন সহায়িকা। এটি একটি তথ্যমূলক গাইড, সরকারি ওয়েবসাইট নয়।</p>
+        <p>Designed by <a href="https://www.facebook.com/mahfujurobin" target="_blank" rel="noopener noreferrer">Mahfujur Rahman Robin</a></p>
+    </footer>
 
     <script src="scripts/script.js"></script>
 </body>
