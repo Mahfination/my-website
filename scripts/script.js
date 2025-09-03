@@ -19,14 +19,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Smooth Scrolling for all internal links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = document.querySelector('header').offsetHeight; // Height of sticky header
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset - 20; // Add some extra padding
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                // Close mobile nav after clicking a link
+                if (navLinks.classList.contains('nav-active')) {
+                    navLinks.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                }
+            }
+        });
+    });
+
     // --- Animation on Scroll ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
+            } else {
+                // Optional: remove is-visible class if you want animation to re-trigger on scroll back up
+                // entry.target.classList.remove('is-visible');
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
     document.querySelectorAll('.animate-on-scroll').forEach(section => {
         observer.observe(section);
     });
@@ -46,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to generate guide (unchanged from previous version)
     function generateGuide(age, appType, isGovt) {
         let primaryDoc = '';
         let documents = [];
